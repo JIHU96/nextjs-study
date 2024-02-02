@@ -1,6 +1,4 @@
-import { NextPage } from "next";
-
-const CustomErrorPage: NextPage = () => {
+const CustomErrorPage = () => {
   return (
     <>
       <div>Error!</div>
