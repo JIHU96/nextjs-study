@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "404",
+};
+
 const CustomErrorPage = () => {
   return (
     <>
