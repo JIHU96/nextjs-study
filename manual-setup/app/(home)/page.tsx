@@ -1,12 +1,25 @@
-export const metadata = {
-  title: "Home",
-};
+import Link from "next/link";
 
-export default function main() {
+const NOMAD_API = process.env.NOMAD_API;
+
+async function getMovies() {
+  //await new Promise((resolve) => setTimeout(resolve, 5000));
+  const response = await fetch(`${NOMAD_API}`);
+  const json = await response.json();
+
+  return json;
+}
+
+export default async function Home() {
+  const movies = await getMovies();
+
   return (
     <div>
-      <h1>Hello</h1>
-      <h2>NextJS</h2>
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
     </div>
   );
 }

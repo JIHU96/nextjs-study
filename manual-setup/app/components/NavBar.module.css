@@ -2,7 +2,7 @@
   width: 100vw;
   height: 40px;
   flex-shrink: 0;
-  /* background-color: aqua; */
+  border-bottom: 2px solid gray;
 }
 
 .wrapper {
@@ -14,9 +14,9 @@
 }
 
 .div:first-child {
-  padding-left: 16px;
+  padding-left: 24px;
 }
 
 .div:last-child {
-  padding-right: 16px;
+  padding-right: 36px;
 }

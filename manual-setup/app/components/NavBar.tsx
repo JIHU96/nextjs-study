@@ -16,8 +16,7 @@ export default function NavBar() {
           <Link href={"/"}>Home</Link> {path === "/" && "🏠"}
         </div>
         <div className={styles.div}>
-          <Link href={"/movies/1?region=seoul&lang=kr"}>movies</Link>{" "}
-          {path === "/movies" && "🎬"}
+          <Link href={"/test"}>test</Link> {path === "/test" && "😛"}
         </div>
         <div className={styles.div}>
           <Link href={"/about-us"}>about-us</Link>{" "}

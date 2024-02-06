@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template: "%s | Next Movies",
-    default: "Loading...",
+    default: "Studying...",
   },
 };
 

@@ -1,3 +1,7 @@
+import { Suspense } from "react";
+import MovieInfos from "./components/MovieInfos";
+import MovieVideos from "./components/MovieVideos";
+
 type MovieProps = {
   params: { id: string };
   searchParams: {
@@ -6,23 +10,22 @@ type MovieProps = {
   };
 };
 
-export default function MovieDetail({
+export default async function MovieDetail({
   params: { id },
   searchParams: { region, lang },
 }: MovieProps) {
-  /*   const id = params.id;
-  const region = searchParams.region;
-  const lang = searchParams.lang;
- */
-  console.log("id: ", id);
-  console.log("region: ", region);
-  console.log("lang: ", lang);
-
   return (
-    <>
+    <div className="wrapper">
       <h1>Movie {Number(id)} Info</h1>
-      <div>region: {region}</div>
-      <div>language: {lang}</div>
-    </>
+      <Suspense fallback={<div>is Loading...</div>}>
+        <MovieInfos id={id} />
+      </Suspense>
+
+      <div>---------------------------------------------</div>
+
+      <Suspense fallback={<div>is Loading...</div>}>
+        <MovieVideos id={id} />
+      </Suspense>
+    </div>
   );
 }
