@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "HBIOS";
+  src: url(./HBIOS-SYS.woff2) format("woff2");
+}
+
+body {
+  font-family: "HBIOS";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

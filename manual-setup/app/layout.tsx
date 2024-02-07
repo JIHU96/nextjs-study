@@ -1,6 +1,10 @@
 import "./styles/reset.css";
-import NavBar from "./components/NavBar";
+import "./styles/global.css";
+import NavBar from "./components/nav/NavBar";
 import { Metadata } from "next";
+import { RecoilRoot } from "recoil";
+import RecoilTest from "./components/recoil-test/RecoilTest";
+import CustomProvider from "./components/provider/CustomProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -17,10 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="container">
-          <NavBar />
-          {children}
-        </div>
+        <NavBar />
+        <CustomProvider>{children}</CustomProvider>
       </body>
     </html>
   );

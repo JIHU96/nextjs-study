@@ -1,3 +1,4 @@
+import styles from "./Home.module.css";
 import Link from "next/link";
 
 const NOMAD_API = process.env.NOMAD_API;
@@ -14,9 +15,9 @@ export default async function Home() {
   const movies = await getMovies();
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {movies.map((movie) => (
-        <li key={movie.id}>
+        <li className={styles.li} key={movie.id}>
           <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
         </li>
       ))}

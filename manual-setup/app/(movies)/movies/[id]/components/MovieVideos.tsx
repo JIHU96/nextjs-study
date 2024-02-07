@@ -12,6 +12,9 @@ async function getMovieVideos(id: string) {
 
 export default async function MovieInfos({ id }: { id: string }) {
   const videos = await getMovieVideos(id);
+  console.log("videos\n", videos[0].site);
 
-  return <div>{"Video"}</div>;
+  const site = videos[0].site;
+
+  return <div>{site}</div>;
 }
